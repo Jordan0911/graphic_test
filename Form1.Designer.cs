@@ -28,126 +28,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.n1 = new System.Windows.Forms.TextBox();
-            this.n2 = new System.Windows.Forms.TextBox();
-            this.result = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.letter_chosen = new System.Windows.Forms.TextBox();
+            this.word = new System.Windows.Forms.Label();
+            this.argument = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.confirm = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.n_lives = new System.Windows.Forms.Label();
+            this.final_word = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // letter_chosen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "first_value";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.letter_chosen.Location = new System.Drawing.Point(231, 335);
+            this.letter_chosen.Name = "letter_chosen";
+            this.letter_chosen.Size = new System.Drawing.Size(214, 20);
+            this.letter_chosen.TabIndex = 0;
+            this.letter_chosen.TextChanged += new System.EventHandler(this.letter_chosen_TextChanged);
             // 
-            // n1
+            // word
             // 
-            this.n1.Location = new System.Drawing.Point(133, 120);
-            this.n1.Name = "n1";
-            this.n1.Size = new System.Drawing.Size(100, 20);
-            this.n1.TabIndex = 1;
-            this.n1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.word.AutoSize = true;
+            this.word.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.word.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.word.Location = new System.Drawing.Point(202, 191);
+            this.word.Name = "word";
+            this.word.Size = new System.Drawing.Size(255, 65);
+            this.word.TabIndex = 1;
+            this.word.Text = "censured_word";
+            this.word.Click += new System.EventHandler(this.censured_word_Click);
             // 
-            // n2
+            // argument
             // 
-            this.n2.BackColor = System.Drawing.Color.Cyan;
-            this.n2.Location = new System.Drawing.Point(303, 120);
-            this.n2.Name = "n2";
-            this.n2.Size = new System.Drawing.Size(100, 20);
-            this.n2.TabIndex = 2;
-            this.n2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.argument.AutoSize = true;
+            this.argument.Font = new System.Drawing.Font("OCR A Extended", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.argument.Location = new System.Drawing.Point(276, 281);
+            this.argument.Name = "argument";
+            this.argument.Size = new System.Drawing.Size(115, 29);
+            this.argument.TabIndex = 2;
+            this.argument.Text = "label4";
             // 
-            // result
+            // label5
             // 
-            this.result.Location = new System.Drawing.Point(469, 120);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(96, 20);
-            this.result.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(311, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label2
+            // confirm
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(316, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "second_value";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.confirm.Location = new System.Drawing.Point(256, 380);
+            this.confirm.Name = "confirm";
+            this.confirm.Size = new System.Drawing.Size(155, 59);
+            this.confirm.TabIndex = 4;
+            this.confirm.Text = "button5";
+            this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.conferm_Click);
             // 
-            // label3
+            // checkBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(499, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(85, 100);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(49, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Easy";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // button1
+            // checkBox2
             // 
-            this.button1.Location = new System.Drawing.Point(225, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(85, 124);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(63, 17);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "Medium";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // button2
+            // checkBox3
             // 
-            this.button2.Location = new System.Drawing.Point(225, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "sub";
-            this.button2.UseVisualStyleBackColor = true;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(85, 148);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(61, 17);
+            this.checkBox3.TabIndex = 7;
+            this.checkBox3.Text = "Difficult";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // button3
+            // n_lives
             // 
-            this.button3.Location = new System.Drawing.Point(225, 173);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "mul";
-            this.button3.UseVisualStyleBackColor = true;
+            this.n_lives.AutoSize = true;
+            this.n_lives.Location = new System.Drawing.Point(147, 342);
+            this.n_lives.Name = "n_lives";
+            this.n_lives.Size = new System.Drawing.Size(78, 13);
+            this.n_lives.TabIndex = 8;
+            this.n_lives.Text = "number of lives";
             // 
-            // button4
+            // final_word
             // 
-            this.button4.Location = new System.Drawing.Point(225, 244);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 25);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "div";
-            this.button4.UseVisualStyleBackColor = true;
+            this.final_word.AutoSize = true;
+            this.final_word.Font = new System.Drawing.Font("Old English Text MT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.final_word.Location = new System.Drawing.Point(273, 112);
+            this.final_word.Name = "final_word";
+            this.final_word.Size = new System.Drawing.Size(113, 44);
+            this.final_word.TabIndex = 9;
+            this.final_word.Text = "label6";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.result);
-            this.Controls.Add(this.n2);
-            this.Controls.Add(this.n1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(710, 623);
+            this.Controls.Add(this.final_word);
+            this.Controls.Add(this.n_lives);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.confirm);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.argument);
+            this.Controls.Add(this.word);
+            this.Controls.Add(this.letter_chosen);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +172,16 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox letter_chosen;
+        private System.Windows.Forms.Label word;
+        private System.Windows.Forms.Label argument;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button confirm;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label n_lives;
+        private System.Windows.Forms.Label final_word;
     }
 }
 
