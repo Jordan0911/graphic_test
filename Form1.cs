@@ -13,10 +13,14 @@ namespace graphic_test
 {
     public partial class Form1 : Form
     {
+        bool game_start = false;
         public Form1()
         {
+           
             InitializeComponent();
-            final_word.Hide();
+            final_word.Show();
+            error_handler.Hide();
+            
         }
         
 
@@ -74,98 +78,122 @@ namespace graphic_test
         }
         private void conferm_Click(object sender, EventArgs e)
         {
-            int lives = Convert.ToInt32(n_lives.Text);
-            bool letter_found=false;
-            char letter = Convert.ToChar(letter_chosen.Text);
-            string placeholder_2 = "";
-            string decided_word = final_word.Text;
-            char[] placeholder_censured=word.Text.ToCharArray();
-            if (word.Text == "censured_word")
+            if (letter_chosen.Text.Length > 1)
             {
-                for (int i = 0; i < placeholder_censured.Length; i++)
+                error_handler.Show();
+            }
+            else 
+            {
+                int lives = Convert.ToInt32(n_lives.Text);
+                bool letter_found = false;
+                char letter = Convert.ToChar(letter_chosen.Text);
+                string transfer_tostring = "";
+                string decided_word = final_word.Text;
+                char[] placeholder_censured = word.Text.ToCharArray();
+                if (game_start==false)
                 {
-                    placeholder_censured[i] = '_';
+                    game_start = true;
+                    for (int i = 0; i < placeholder_censured.Length; i++)
+                    {
+                        placeholder_censured[i] = '_';
+                    }
                 }
-            }
-            
-
-            for (int i = 0; i < decided_word.Length; i++) 
-            {
-                if (letter == decided_word[i]) 
+                placeholder_censured[0] = decided_word[0];          
+                for (int i = 0; i < decided_word.Length; i++)
                 {
-                    placeholder_censured[i] = letter;                
-                    letter_found=true;
+                    if (letter == decided_word[i])
+                    {
+                        placeholder_censured[i] = letter;
+                        letter_found = true;
+                    }
                 }
-            }
-            if (letter_found == false) 
-            {
-                lives--;
-                
-                n_lives.Text=Convert.ToString(lives);
-            }
-            for(int i=0;i<decided_word.Length; i++)
-            {
-                placeholder_2 += placeholder_censured[i];
-            }
-            word.Text = placeholder_2;
-        }
+                if (letter_found == false)
+                {
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+                    lives--;
+                    if (lives == 0) 
+                    {
+                        word.Text = "You have lost! the actual word was...";
+                        final_word.Show();
+                    
+                    }
 
-        }
-
+                    n_lives.Text = Convert.ToString(lives);
+                }
+                for (int i = 0; i < decided_word.Length; i++)
+                {
+                    transfer_tostring+= placeholder_censured[i];
+                }
+                word.Text = transfer_tostring;
+                if (word.Text == final_word.Text)
+                {
+                    word.Text = "Congratulations, you have won!";
+                }
+            }          
+        }    
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked) 
-            {
-                n_lives.Text = "12";
-                checkBox1.Hide();
-                checkBox2.Hide();
-                checkBox3.Hide();
-                string placeholder = n_lives.Text;
-                int difficulty = Convert.ToInt32(placeholder);
-                string[] stuff = Word_chooser(difficulty);
-                final_word.Text = stuff[0];
-                argument.Text = stuff[1];
-            }
+             
+            
+            n_lives.Text = "12";
+            checkBox1.Hide();
+            checkBox2.Hide();
+            checkBox3.Hide();
+            string placeholder = label_a.Text;
+            int difficulty = Convert.ToInt32(n_lives.Text);
+            string[] stuff = Word_chooser(difficulty);
+            final_word.Text = stuff[0];
+            argument.Text = stuff[1];
+            
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked)
-            {
-                n_lives.Text = "8";
-                checkBox1.Hide();
-                checkBox2.Hide();
-                checkBox3.Hide();
-                string placeholder=n_lives.Text;
-                int difficulty = Convert.ToInt32(placeholder);
-                string[] stuff = Word_chooser(difficulty);
-                final_word.Text = stuff[0];
-                argument.Text = stuff[1];
-            }
+           
+            n_lives.Text = "8";
+            checkBox1.Hide();
+            checkBox2.Hide();
+            checkBox3.Hide();
+            string placeholder=label_a.Text;
+            int difficulty = Convert.ToInt32(n_lives.Text);
+            string[] stuff = Word_chooser(difficulty);
+            final_word.Text = stuff[0];
+            argument.Text = stuff[1];
+            
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked)
-            {
-                n_lives.Text = "6";
-                checkBox1.Hide();
-                checkBox2.Hide();
-                checkBox3.Hide();
-                string placeholder = n_lives.Text;
-                int difficulty = Convert.ToInt32(placeholder);
-                string[] stuff = Word_chooser(difficulty);
-                final_word.Text = stuff[0];
-                argument.Text = stuff[1];
-            }
+           
+            n_lives.Text = "6";
+            checkBox1.Hide();
+            checkBox2.Hide();
+            checkBox3.Hide();
+            string placeholder = label_a.Text;
+            int difficulty = Convert.ToInt32(n_lives.Text);
+            string[] stuff = Word_chooser(difficulty);
+            final_word.Text = stuff[0];
+            argument.Text = stuff[1];
+            
         }
 
-        private void censured_word_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label_a_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (guess_word.Text == final_word.Text)
+            {
+                word.Text = "Congratulations, you have won!";
+
+            }
         }
     }
 }
